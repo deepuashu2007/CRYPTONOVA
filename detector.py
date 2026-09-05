@@ -49,7 +49,7 @@ tests = [
 
 
 print("====================================")
-print("       Q-SENTINEL THREAT DETECTOR")
+print("       CRYPTONOVA THREAT DETECTOR")
 print("====================================")
 
 for attack_type, signature_valid, quantum_anomaly in tests:
