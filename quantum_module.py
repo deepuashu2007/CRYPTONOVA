@@ -8,7 +8,7 @@ qc = QuantumCircuit(1)
 # Put the qubit into superposition
 qc.h(0)
 
-print("=== Q-SENTINEL QUANTUM MODULE ===")
+print("=== CRYPTONOVA QUANTUM MODULE ===")
 print()
 print("Quantum Circuit:")
 print(qc)
