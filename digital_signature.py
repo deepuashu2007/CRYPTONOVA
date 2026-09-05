@@ -8,7 +8,7 @@ private_key = Ed25519PrivateKey.generate()
 public_key = private_key.public_key()
 
 # 3. Original document
-document = b"Q-Sentinel Digital Signature Test"
+document = b"CRYPTONOVA Digital Signature Test"
 
 # 4. Create digital signature
 signature = private_key.sign(document)
