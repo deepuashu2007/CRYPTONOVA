@@ -4,14 +4,14 @@ from qiskit.quantum_info import Statevector, Pauli
 
 
 print("=" * 55)
-print("        Q-SENTINEL CYBER THREAT DETECTION")
+print("        CRYPTONOVA CYBER THREAT DETECTION")
 print("=" * 55)
 
 # -------------------------------------------------
 # 1. DIGITAL SIGNATURE
 # -------------------------------------------------
 
-document = b"Q-Sentinel Secure Document"
+document = b"CRYPTONOVA Secure Document"
 
 private_key = Ed25519PrivateKey.generate()
 public_key = private_key.public_key()
