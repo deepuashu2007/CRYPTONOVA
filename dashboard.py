@@ -2,10 +2,12 @@ import streamlit as st
 import hashlib
 import json
 from datetime import datetime
+import requests
 
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from qiskit import QuantumCircuit
 from qiskit.quantum_info import Statevector, Pauli
+BACKEND_URL = "http://127.0.0.1:8000"
 
 
 # ==============================
@@ -67,7 +69,33 @@ scenario = st.selectbox(
         "Quantum Channel Manipulation"
     ]
 )
+st.subheader("Backend Threat Analysis")
 
+if st.button("Analyze Threat"):
+
+    response = requests.post(
+        f"{BACKEND_URL}/analyze",
+        json={
+            "scenario": scenario
+        }
+    )
+
+    if response.status_code == 200:
+
+        result = response.json()
+
+        st.write("Threat Score:", result["threat_score"])
+        st.write("Threshold:", result["threshold"])
+        st.write("Result:", result["result"])
+
+        st.write("Quantum Analysis:")
+        st.write(result["quantum_analysis"])
+
+        st.write("Audit Hash:")
+        st.code(result["audit_hash"])
+
+    else:
+        st.error("Backend connection failed")
 
 # ==============================
 # DIGITAL SIGNATURE
